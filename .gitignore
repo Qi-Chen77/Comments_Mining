@@ -1,3 +1,11 @@
+# Comments
+comments.json
+
+# Results
+
+# Keys
+config.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
