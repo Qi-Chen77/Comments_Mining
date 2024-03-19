@@ -12,7 +12,7 @@ openai.api_key = config["openai_api_key"]
 def categorize_comment(comment, categories, max_attempts=3):
     initial_prompt = f"Please categorize the following comment: \"{comment}\". Categories: {', '.join(categories)}."
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="gpt-3.5-turbo",
         prompt=initial_prompt,
         temperature=0.4,
         max_tokens=60,
@@ -28,7 +28,7 @@ def categorize_comment(comment, categories, max_attempts=3):
     while attempts < max_attempts:
         refinement_prompt = f"Is the comment about \"{predicted_category}\"? Comment: \"{comment}\" Yes or No."
         response = openai.Completion.create(
-            engine="text-davinci-003",
+            engine="gpt-3.5-turbo",
             prompt=refinement_prompt,
             temperature=0.4,
             max_tokens=60,
@@ -41,7 +41,7 @@ def categorize_comment(comment, categories, max_attempts=3):
             return predicted_category
         elif "no" in answer:
             response = openai.Completion.create(
-                engine="text-davinci-003",
+                engine="gpt-3.5-turbo",
                 prompt=initial_prompt,
                 temperature=0.4,
                 max_tokens=60,
