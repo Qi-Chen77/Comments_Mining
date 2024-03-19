@@ -1,6 +1,6 @@
 # Product Comments Categorizer
 
-This Python script categorizes user comments on a product into predefined categories using OpenAI's GPT-3. It reads comments and categories from JSON files, categorizes each comment using GPT-3, and outputs the results to another JSON file.
+This Python script categorizes user comments on a product into predefined categories using OpenAI's LLM. It reads comments and categories from JSON files, categorizes each comment using GPT-3.5, and outputs the results to another JSON file.
 
 ## Installation
 
