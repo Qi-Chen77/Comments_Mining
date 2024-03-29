@@ -22,5 +22,6 @@ def main():
     with open('categorized_comments.json', 'w') as file:
         json.dump(categorized_comments, file, indent=4)
 
+
 if __name__ == "__main__":
     main()
